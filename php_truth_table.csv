@@ -1,0 +1,17 @@
+message,color,location,decline
+long,black,high,present
+long,black,high,absent
+long,black,low,present
+long,black,low,absent
+long,white,high,present
+long,white,high,absent
+long,white,low,present
+long,white,low,absent
+short,black,high,present
+short,black,high,absent
+short,black,low,present
+short,black,low,absent
+short,white,high,present
+short,white,high,absent
+short,white,low,present
+short,white,low,absent

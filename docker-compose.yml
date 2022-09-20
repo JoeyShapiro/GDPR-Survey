@@ -1,0 +1,50 @@
+version: '4.8.1'
+services:
+    gdpr-db:
+        container_name: gdpr-db
+        image: mariadb
+#        restart: always
+        environment:
+            MARIADB_ROOT_PASSWORD: toor
+            MARIADB_DATABASE: gdpr
+            MARIADB_USER: admin
+            MARIADB_PASSWORD: toor
+        ports:
+            - "9906:3306"
+#        networks:
+#            projectNetwork:
+#                ipv4_address: 10.20.0.5
+    gdpr-php-apache-environment:
+        container_name: gdpr-php-apache
+        build:
+            context: /Users/oniichan/Documents/Class/Research/GDPR/BetterWebsite
+            dockerfile: DockerFile
+#        restart: always
+        depends_on:
+            - gdpr-db
+        volumes:
+            - /Users/oniichan/Documents/Class/Research/GDPR/BetterWebsite/www:/var/www/html/
+        ports:
+            - 6060:80
+#        networks:
+#            projectNetwork:
+#                ipv4_address: 10.20.0.6
+    gdpr-phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '7070:80'
+#        networks:
+#            projectNetwork:
+#                ipv4_address: 10.20.0.7
+#        restart: always
+        environment:
+            PMA_HOST: gdpr-db
+        depends_on:
+            - gdpr-db
+#networks:
+#  projectNetwork:
+#    driver: bridge
+#    ipam:
+#     config:
+#       - subnet: 10.20.0.0/16
+#         gateway: 10.20.0.1

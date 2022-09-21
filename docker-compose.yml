@@ -17,13 +17,13 @@ services:
     gdpr-php-apache-environment:
         container_name: gdpr-php-apache
         build:
-            context: /Users/oniichan/Documents/Class/Research/GDPR/BetterWebsite
+            context: .
             dockerfile: DockerFile
 #        restart: always
         depends_on:
             - gdpr-db
         volumes:
-            - /Users/oniichan/Documents/Class/Research/GDPR/BetterWebsite/www:/var/www/html/
+            - ./www:/var/www/html/
         ports:
             - 6060:80
 #        networks:

@@ -6,7 +6,7 @@ go into the root folder of this project. (this is the location of `docker-compos
 run `docker compose up --build`
 
 ## Exposed ports
-On the host machine, the following ports will be open
-DataBase: `9906`
-PHP: `6060`
-PHP My Admin: `7070`
+On the host machine, the following ports will be open<br>
+DataBase: `9906`<br>
+PHP: `6060`<br>
+PHP My Admin: `7070`<br>
